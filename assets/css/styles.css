@@ -199,8 +199,10 @@ a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .the
   color: #434E5E;
 }
 
-.footer .fa-heart {
-  color: #fb866a;
+.footer {
+  background-color: #434E5E;
+  color: #fff;
+  height: 100px;
 }
 
 .badge-primary {
