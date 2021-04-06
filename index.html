@@ -2,24 +2,406 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi CV</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+	<title>CV - Gustavo Federico Casas</title>
+
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+	<link rel="stylesheet" href="assets/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
+
+	<!-- Theme CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+
+	<script>
+		function calculateAge(birthday) {
+			var birthday_arr = birthday.split("/");
+			var birthday_date = new Date(birthday_arr[2], birthday_arr[1] - 1, birthday_arr[0]);
+			var ageDifMs = Date.now() - birthday_date.getTime();
+			var ageDate = new Date(ageDifMs);
+			return Math.abs(ageDate.getUTCFullYear() - 1970);
+		}
+
+		var age = calculateAge("12/02/1987");
+		console.log(age);
+
+	</script>
+
+
 </head>
 
 <body>
+
+	<article class="content-wrapper text-center position-relative">
+		<div class="content-wrapper-inner mx-auto text-left bg-white shadow-lg">
+			<header class="content-header pt-4 pt-md-0">
+				<div class="media flex-column flex-md-row">
+					<img class="mr-3 img-fluid picture mx-auto" src="assets/images/yo.jpg" alt="">
+					<div class="media-body p-4 d-flex flex-column flex-md-row mx-auto mx-lg-0">
+						<div class="primary-info">
+							<h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase">Gustavo Casas</h1>
+							<div class="title mb-3">Desarrollador</div>
+							<ul class="list-unstyled">
+								<li class="mb-2">
+									<a href="#" id="edad"></a>
+									<a href="#"> (12-02-1987)</a>
+								</li>
+								<li class="mb-2">
+									<a href="#"><i class="fa fa-envelope fa-fw mr-2"
+											data-fa-transform="grow-3"></i>gus.fe.c@gmail.com</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-mobile fa-fw mr-2" data-fa-transform="grow-3"></i>(+54)
+										11 34066583</a>
+								</li>
+							</ul>
+						</div>
+						<!--//primary-info-->
+						<div class="secondary-info ml-md-auto mt-2">
+							<ul class="content-social list-unstyled">
+								<li class="mb-3"><a href="#"><span class="fa-container text-center mr-2"><i
+												class="fa fa-linkedin" aria-hidden="true"></i>
+										</span>linkedin.com/in/gusfedec</a>
+								</li>
+								<li class="mb-3"><a href="#"><span class="fa-container text-center mr-2"><i
+												class="fa fa-github-alt fa-fw"></i></span>github.com/gusfedec</a></li>
+								<li><a href="#"><span class="fa-container text-center mr-2"><i
+												class="fa fa-globe"></i></span>guswebs.com</a></li>
+							</ul>
+						</div>
+						<!--//secondary-info-->
+
+					</div>
+					<!--//media-body-->
+				</div>
+				<!--//media-->
+			</header>
+			<div class="content-body p-5">
+				<section class="content-section summary-section mb-5">
+					<h2 class="content-section-title text-uppercase font-weight-bold pb-3 mb-3">Perfil</h2>
+					<div class="content-section-content">
+						<p class="mb-0"> <span id="experiencia"></span> de experiencia en desarrollo web. Me inicié en
+							el desarrollo con PHP y hace <span id="experiencia_js"></span> me dedico al desarrollo con
+							Javascript, utilizando
+							frameworks y librerías como AngularJs, Angular y ReactJs y NodeJs. </p>
+					</div>
+				</section>
+				<section class="content-section summary-section mb-5">
+					<h2 class="content-section-title text-uppercase font-weight-bold pb-3 mb-3">Objetivo</h2>
+					<div class="content-section-content">
+						<p class="mb-0">Desempeñarme de acuerdo a las necesidades de la Empresa. Proyectarme dentro de
+							mis funciones logrando una satisfacción hacia mis superiores y continuar mi desarrollo
+							profesional. Adaptarme a las nuevas tecnologías a las que se debe afrontar constantemente en
+							este ambiente.</p>
+					</div>
+				</section>
+				<!--//summary-section-->
+				<div class="row">
+					<div class="col-lg-9">
+						<section class="content-section experience-section mb-5">
+							<h2 class="content-section-title text-uppercase font-weight-bold pb-3 mb-3">Work Experience
+							</h2>
+							<div class="content-section-content">
+								<div class="content-timeline position-relative">
+									<article class="content-timeline-item position-relative pb-5">
+
+										<div class="content-timeline-item-header mb-2">
+											<div class="d-flex flex-column flex-md-row">
+												<h3 class="content-position-title font-weight-bold mb-1">Desarrollador
+													FrontEnd
+												</h3>
+												<div class="content-company-name ml-auto">Banco Credicoop</div>
+											</div>
+											<!--//row-->
+											<div class="content-position-time">2015 - Actual</div>
+										</div>
+										<!--//content-timeline-item-header-->
+										<div class="content-timeline-item-desc">
+											<h4 class="content-timeline-item-desc-heading font-weight-bold">Tareas
+												realizadas:
+											</h4>
+											<ul>
+												<li>Participé del desarrollo del sitio institucional.</li>
+												<li>Sistema interno de
+													manejo de cheques.</li>
+												<li>App movil de encuesta.</li>
+											</ul>
+											<h4 class="content-timeline-item-desc-heading font-weight-bold">Tecnologias
+												usadas:</h4>
+											<ul class="list-inline">
+												<li class="list-inline-item"><span
+														class="badge badge-primary badge-pill">AngularJs</span></li>
+												<li class="list-inline-item"><span
+														class="badge badge-primary badge-pill">NodeJs</span></li>
+												<li class="list-inline-item"><span
+														class="badge badge-primary badge-pill">PHP</span></li>
+												<li class="list-inline-item"><span
+														class="badge badge-primary badge-pill">Ionic</span></li>
+												<li class="list-inline-item"><span
+														class="badge badge-primary badge-pill">HTML/CSS</span></li>
+												<li class="list-inline-item"><span
+														class="badge badge-primary badge-pill">Mysql/CouchDb</span></li>
+												<li class="list-inline-item"><span
+														class="badge badge-primary badge-pill">Java</span></li>
+												<li class="list-inline-item"><span
+														class="badge badge-primary badge-pill">Linux</span></li>
+											</ul>
+										</div>
+										<!--//content-timeline-item-desc-->
+
+									</article>
+									<!--//content-timeline-item-->
+
+									<article class="content-timeline-item position-relative pb-5">
+
+										<div class="content-timeline-item-header mb-2">
+											<div class="d-flex flex-column flex-md-row">
+												<h3 class="content-position-title font-weight-bold mb-1">Analista
+													Programador PHP</h3>
+												<div class="content-company-name ml-auto">RCC ( Red Cooperativa de
+													Comunicaciones )</div>
+											</div>
+											<!--//row-->
+											<div class="content-position-time">2008 - 2015</div>
+										</div>
+										<!--//content-timeline-item-header-->
+										<div class="content-timeline-item-desc">
+											<p>Desarrollo y mantenimiento de sistemas de comercio electrónico.
+												Desarrollo de portales, blogs, adaptación de módulos y plugins.
+											</p>
+											<h4 class="content-timeline-item-desc-heading font-weight-bold">Tareas
+												realizadas
+											</h4>
+											<ul>
+												<li>Linux</li>
+												<li>Ajax, XHTML, JS</li>
+												<li>Manejo de Xoops, Wordpress, Drupal, Simfony, CodeIgniter</li>
+												<li>Mysql</li>
+												<li>Desarrollo en Magento; maquetación, módulos, Singleton, MVC,
+													integración con Apis</li>
+												<li>Maquetación con Bootstrap 3</li>
+												<li>Apache/PHP 5/Zend Framework</li>
+											</ul>
+											<h4 class="content-timeline-item-desc-heading font-weight-bold">Tecnologias
+												usadas:</h4>
+											<ul class="list-inline">
+												<li class="list-inline-item"><span
+														class="badge badge-primary badge-pill">Bootstrap</span></li>
+												<li class="list-inline-item"><span
+														class="badge badge-primary badge-pill">Magento</span></li>
+												<li class="list-inline-item"><span
+														class="badge badge-primary badge-pill">Wordpress</span></li>
+												<li class="list-inline-item"><span
+														class="badge badge-primary badge-pill">PHP</span></li>
+												<li class="list-inline-item"><span
+														class="badge badge-primary badge-pill">HTML/CSS</span></li>
+												<li class="list-inline-item"><span
+														class="badge badge-primary badge-pill">MySQL</span></li>
+											</ul>
+										</div>
+										<!--//content-timeline-item-desc-->
+
+									</article>
+									<!--//content-timeline-item-->
+
+								</div>
+								<!--//content-timeline-->
+
+
+
+
+
+
+							</div>
+						</section>
+						<!--//experience-section-->
+					</div>
+					<div class="col-lg-3">
+						<section class="content-section skills-section mb-5">
+							<h2 class="content-section-title text-uppercase font-weight-bold pb-3 mb-3">Habilidades</h2>
+							<div class="content-section-content">
+								<div class="content-skill-item">
+									<h4 class="content-skills-cat font-weight-bold">Frontend</h4>
+									<ul class="list-unstyled mb-4">
+										<li class="mb-2">
+											<div class="content-skill-name">AngularJS</div>
+											<div class="progress content-progress">
+												<div class="progress-bar theme-progress-bar-dark" role="progressbar"
+													style="width: 98%" aria-valuenow="25" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</li>
+										<li class="mb-2">
+											<div class="content-skill-name">Angular</div>
+											<div class="progress content-progress">
+												<div class="progress-bar theme-progress-bar-dark" role="progressbar"
+													style="width: 70%" aria-valuenow="25" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</li>
+										<li class="mb-2">
+											<div class="content-skill-name">React</div>
+											<div class="progress content-progress">
+												<div class="progress-bar theme-progress-bar-dark" role="progressbar"
+													style="width: 60%" aria-valuenow="25" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</li>
+										<li class="mb-2">
+											<div class="content-skill-name">JavaScript</div>
+											<div class="progress content-progress">
+												<div class="progress-bar theme-progress-bar-dark" role="progressbar"
+													style="width: 96%" aria-valuenow="25" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</li>
+
+
+										<li class="mb-2">
+											<div class="content-skill-name">HTML/CSS</div>
+											<div class="progress content-progress">
+												<div class="progress-bar theme-progress-bar-dark" role="progressbar"
+													style="width: 96%" aria-valuenow="25" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!--//content-skill-item-->
+
+								<div class="content-skill-item">
+									<h4 class="content-skills-cat font-weight-bold">Backend</h4>
+									<ul class="list-unstyled">
+										<li class="mb-2">
+											<div class="content-skill-name">Node.js</div>
+											<div class="progress content-progress">
+												<div class="progress-bar theme-progress-bar-dark" role="progressbar"
+													style="width: 70%" aria-valuenow="25" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</li>
+										<li class="mb-2">
+											<div class="content-skill-name">PHP</div>
+											<div class="progress content-progress">
+												<div class="progress-bar theme-progress-bar-dark" role="progressbar"
+													style="width: 86%" aria-valuenow="25" aria-valuemin="0"
+													aria-valuemax="100"></div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<!--//content-skill-item-->
+
+								<div class="content-skill-item">
+									<h4 class="content-skills-cat font-weight-bold">Others</h4>
+									<ul class="list-inline">
+										<li class="list-inline-item"><span class="badge badge-light">Git</span></li>
+										<li class="list-inline-item"><span class="badge badge-light">WordPress</span>
+										<li class="list-inline-item"><span class="badge badge-light">Inglés</span>
+										</li>
+									</ul>
+								</div>
+								<!--//content-skill-item-->
+							</div>
+							<!--content-section-content-->
+						</section>
+						<!--//skills-section-->
+						<section class="content-section education-section mb-5">
+							<h2 class="content-section-title text-uppercase font-weight-bold pb-3 mb-3">Education</h2>
+							<div class="content-section-content">
+								<ul class="list-unstyled">
+									<li class="mb-2">
+										<div class="content-degree font-weight-bold">Técnicatura superior en
+											programación.</div>
+										<div class="content-degree-org">Universidad Tecnológica Nacional.</div>
+										<div class="content-degree-time">07-2008 / Actual</div>
+									</li>
+								</ul>
+							</div>
+						</section>
+						<!--//education-section-->
+						<section class="content-section reference-section mb-5">
+							<h2 class="content-section-title text-uppercase font-weight-bold pb-3 mb-3">Cursos</h2>
+							<div class="content-section-content">
+								<ul class="list-unstyled content-courses-list">
+									<li class="mb-2 pl-4 position-relative">
+										<div class="content-course-name">Platzi</div>
+										<div class="content-course-desc">
+											<ul>
+												<li>Angular 8</li>
+												<li>ReactJs</li>
+												<li>NodeJs</li>
+												<li>Flutter</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</section>
+						<!--//interests-section-->
+						<section class="content-section language-section mb-5">
+							<h2 class="content-section-title text-uppercase font-weight-bold pb-3 mb-3">Idiomas</h2>
+							<div class="content-section-content">
+								<ul class="list-unstyled content-lang-list">
+									<li class="mb-2"><span class="content-lang-name font-weight-bold">Español</span>
+										<small class="text-muted font-weight-normal">(Nativo)</small>
+									</li>
+									<li><span class="content-lang-name font-weight-bold">Inglés</span> <small
+											class="text-muted font-weight-normal">(Intermedio)</small></li>
+								</ul>
+							</div>
+						</section>
+						<!--//language-section-->
+						<!-- <section class="content-section interests-section mb-5">
+							<h2 class="content-section-title text-uppercase font-weight-bold pb-3 mb-3">Interests</h2>
+							<div class="content-section-content">
+								<ul class="list-unstyled">
+									<li class="mb-1">Climbing</li>
+									<li class="mb-1">Snowboarding</li>
+									<li class="mb-1">Cooking</li>
+								</ul>
+							</div>
+						</section> -->
+						<!--//interests-section-->
+
+					</div>
+				</div>
+				<!--//row-->
+			</div>
+			<!--//content-body-->
+
+
+		</div>
+	</article>
+
+
+	<footer class="footer text-center pt-2 pb-5">
+
+
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<script>
+		document.getElementById('edad').innerHTML = calculateAge("12/02/1987") + ` años`;
+		document.getElementById('experiencia').innerHTML = calculateAge("01/12/2007") + ` años`;
+		document.getElementById('experiencia_js').innerHTML = calculateAge("01/07/2015") + ` años`;
+	</script>
+
 
 </body>
 
