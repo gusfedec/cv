@@ -42,7 +42,9 @@
 	<article class="content-wrapper text-center position-relative">
 		<div class="language-buttons mb-2">
 			<a style="cursor: pointer;" class="language-button active" data-language="es">ES</a>
+			|
 			<a style="cursor: pointer;" class="language-button" data-language="en">EN</a>
+			<img style="cursor: pointer;" id="printButton" class="ml-3" src="assets/images/print.png" alt="">
 	</div>
 		<div class="content-wrapper-inner mx-auto text-left bg-white shadow-lg">
 			<header class="content-header pt-4 pt-md-0">
@@ -637,6 +639,9 @@
 
 document.addEventListener('DOMContentLoaded', mostrarContenidoIdiomaSeleccionado);
 
+document.getElementById("printButton").addEventListener("click", function() {
+   window.print();
+});
 
 
 	</script>
